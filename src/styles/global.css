@@ -1,7 +1,18 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap");
+@font-face {
+    font-family: "icomoon";
+    src: url("/fonts/icomoon.eot?indfzd");
+    src: url("/fonts/icomoon.eot?indfzd#iefix") format("embedded-opentype"),
+        url("/fonts/icomoon.ttf?indfzd") format("truetype"),
+        url("/fonts/icomoon.woff?indfzd") format("woff"),
+        url("/fonts/icomoon.svg?indfzd#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
 
-@theme{
+@theme {
     --color-primary: #6366f1; /* Color primario por defecto (indigo-500) */
     --font-anime: "Outfit", sans-serif;
     --font-body: "Poppins", sans-serif;
@@ -21,6 +32,38 @@ body {
     font-family: var(--font-body);
     @apply text-neutral-800 dark:text-neutral-200;
     background-color: #0f0f13;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "icomoon" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ec2:before {
+    content: "\e900";
+}
+.icon-s3:before {
+    content: "\e901";
+}
+.icon-rds:before {
+    content: "\e902";
+}
+.icon-lambda:before {
+    content: "\e903";
+}
+.icon-bedrock:before {
+    content: "\e904";
 }
 
 /* Títulos con estilo anime */
