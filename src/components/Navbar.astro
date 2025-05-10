@@ -1,0 +1,151 @@
+---
+
+---
+
+<header class="fixed w-full z-50 py-2 px-3">
+    <div
+        class="bg-neutral-90 0/80 border-b backdrop-blur-md border-neutral-800/50 max-w-7xl rounded-2xl mx-auto"
+    >
+        <div
+            class="container mx-auto px-4 py-4 flex justify-between items-center"
+        >
+            <a href="#" class="text-2xl font-bold text-primary font-anime"
+                >David</a
+            >
+
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:block">
+                    <ul class="flex gap-8">
+                        <li>
+                            <a
+                                href="#inicio"
+                                class="text-gray-300 hover:text-primary transition-colors hover-underline"
+                            >
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#sobre-mi"
+                                class="text-gray-300 hover:text-primary transition-colors hover-underline"
+                            >
+                                Sobre mí
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#habilidades"
+                                class="text-gray-300 hover:text-primary transition-colors hover-underline"
+                            >
+                                Habilidades
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#proyectos"
+                                class="text-gray-300 hover:text-primary transition-colors hover-underline"
+                            >
+                                Proyectos
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#contacto"
+                                class="text-gray-300 hover:text-primary transition-colors hover-underline"
+                            >
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="md:hidden text-white">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-6 h-6"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-neutral-950/95 border-b border-neutral-800/50"
+    >
+        <nav class="container mx-auto px-4 py-4">
+            <ul class="flex flex-col gap-4">
+                <li>
+                    <a
+                        href="#inicio"
+                        class="block py-2 text-gray-300 hover:text-primary transition-colors"
+                        >Inicio</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#sobre-mi"
+                        class="block py-2 text-gray-300 hover:text-primary transition-colors"
+                        >Sobre mí</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#habilidades"
+                        class="block py-2 text-gray-300 hover:text-primary transition-colors"
+                        >Habilidades</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#proyectos"
+                        class="block py-2 text-gray-300 hover:text-primary transition-colors"
+                        >Proyectos</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#contacto"
+                        class="block py-2 text-gray-300 hover:text-primary transition-colors"
+                        >Contacto</a
+                    >
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    // Toggle mobile menu
+    document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            // Close menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                });
+            });
+        }
+    });
+</script>

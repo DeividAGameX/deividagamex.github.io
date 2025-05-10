@@ -1,0 +1,144 @@
+---
+const skillCategories = [
+    {
+        title: "Lenguajes de Programación",
+        skills: [
+            {name: "Bash", icon: "devicon-bash-plain"},
+            {name: "C#", icon: "devicon-csharp-plain"},
+            {name: "CSS3", icon: "devicon-css3-plain"},
+            {name: "HTML5", icon: "devicon-html5-plain"},
+            {name: "Java", icon: "devicon-java-plain"},
+            {name: "JavaScript", icon: "devicon-javascript-plain"},
+            {name: "PHP", icon: "devicon-php-plain"},
+            {name: "Python", icon: "devicon-python-plain"},
+            {name: "SQL", icon: "devicon-postgresql-plain"},
+            {name: "TypeScript", icon: "devicon-typescript-plain"},
+        ],
+    },
+    {
+        title: "Frameworks y Librerías",
+        skills: [
+            {icon: "devicon-angularjs-plain", name: "Angular"},
+            {icon: "devicon-astro-plain", name: "Astro"},
+            {icon: "devicon-bootstrap-plain", name: "Bootstrap"},
+            {icon: "fab fa-microsoft", name: "DotNet"},
+            {icon: "fas fa-cogs", name: "Electron"},
+            {icon: "devicon-express-original", name: "Express"},
+            {icon: "devicon-ionic-original", name: "Ionic"},
+            {icon: "devicon-laravel-plain", name: "Laravel"},
+            {icon: "devicon-nextjs-plain", name: "Next.js"},
+            {icon: "devicon-nodejs-plain", name: "Node.js"},
+            {icon: "devicon-react-original", name: "React"},
+            {
+                icon: "devicon-reactnavigation-original",
+                name: "React Native",
+            },
+            {icon: "devicon-redux-original", name: "Redux"},
+            {icon: "devicon-sass-original", name: "Sass"},
+            {icon: "devicon-sequelize-plain", name: "Sequelize"},
+            {icon: "devicon-tailwindcss-plain", name: "Tailwind CSS"},
+            {icon: "devicon-vuejs-plain", name: "Vue.js"},
+            {icon: "fa-solid fa-memory", name: "Zustand"},
+        ],
+    },
+    {
+        title: "Servicios de AWS",
+        skills: [
+            {name: "Lambda", icon: "icon-lambda"},
+            {name: "S3", icon: "icon-s3"},
+            {name: "Bedrock", icon: "icon-bedrock"},
+            {name: "EC2", icon: "icon-ec2"},
+            {name: "RDS", icon: "icon-rds"},
+            {name: "AWS", icon: "fab fa-aws"},
+        ],
+    },
+    {
+        title: "Bases de Datos y Herramientas",
+        skills: [
+            {icon: "devicon-prisma-plain", name: "Prisma"},
+            {icon: "devicon-mongodb-plain", name: "MongoDB"},
+            {icon: "devicon-arduino-plain", name: "Arduino"},
+            {icon: "devicon-firebase-plain", name: "Firebase"},
+            {icon: "devicon-github-original", name: "GitHub"},
+            {icon: "devicon-mysql-plain", name: "MySQL"},
+            {icon: "devicon-photoshop-plain", name: "Photoshop"},
+            {icon: "devicon-postgresql-plain", name: "PostgreSQL"},
+        ],
+    },
+];
+---
+
+<section id="habilidades" class="py-20 relative overflow-hidden">
+    <!-- Fondo minimalista -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950 to-neutral-900"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <h2
+            class="text-3xl md:text-4xl font-bold text-center mb-16 text-white title-underline"
+        >
+            Mis Habilidades
+        </h2>
+
+        <div class="max-w-6xl mx-auto">
+            {
+                skillCategories.map((category) => (
+                    <div class="skills-category py-4">
+                        <h3 class="skills-category-title text-2xl px-4 py-2">{category.title}</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                            {category.skills.map((skill) => (
+                                <div class="skill-icon bg-neutral-900 p-4 flex flex-col items-center hover:shadow-md">
+                                    <div class="w-12 h-12 flex items-center justify-center mb-3">
+                                        {/* <img
+                                            src={`/placeholder.svg?text=${skill.icon}&height=48&width=48`}
+                                            alt={skill.name}
+                                            class="max-w-full max-h-full"
+                                        /> */}
+                                        <i class={`${skill.icon} text-3xl`} />
+                                    </div>
+                                    <h4 class="text-center font-medium text-neutral-300 text-sm">
+                                        {skill.name}
+                                    </h4>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<!-- <section id="habilidades" class="py-20 relative overflow-hidden">
+    Fondo minimalista
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950 to-neutral-900"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <h2
+            class="text-3xl md:text-4xl font-bold text-center mb-16 text-white title-underline"
+        >
+            Mis Habilidades
+        </h2>
+
+        <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+        >
+            {
+                skills.map((skill) => (
+                    <div class="skill-icon bg-neutral-950 p-5 flex flex-col items-center hover:shadow-md hover:text-primary">
+                        <div class="w-14 h-14 flex items-center justify-center mb-3">
+                            {/* <img
+                                src={`/placeholder.svg?text=${skill.icon}&height=56&width=56`}
+                                alt={skill.name}
+                                class="max-w-full max-h-full"
+                            /> */}
+                            <i class={`${skill.icon} text-3xl`} />
+                        </div>
+                        <h3 class="text-center font-medium text-sm">
+                            {skill.name}
+                        </h3>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section> -->

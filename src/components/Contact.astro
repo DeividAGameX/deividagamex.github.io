@@ -1,0 +1,327 @@
+---
+const socialLinks = [
+    {
+        name: "Youtube",
+        icon: "fab fa-youtube",
+        search: "SekAiJK",
+        color: "youtube",
+        url: "https://www.youtube.com/@sekaijk",
+        image: "https://sekaijk.com/_next/image?url=%2Fassets%2FPerfil.jpg&w=1080&q=75",
+    },
+    {
+        name: "Facebook",
+        icon: "fab fa-facebook",
+        search: "@Deividag01",
+        color: "facebook",
+        url: "https://www.facebook.com/gaming/Deividag01",
+        image: "https://res.cloudinary.com/sekai-jk/image/upload/v1737606441/Sekaijk/post/TwitchPerfil_otr0vf.jpg",
+    },
+    {
+        name: "Instagram",
+        icon: "fab fa-instagram",
+        search: "@deividagamex",
+        color: "instagram",
+        url: "https://www.instagram.com/deividagamex/",
+        image: "https://res.cloudinary.com/sekai-jk/image/upload/v1746845513/IMG_20221218_122705_coo1yc.jpg",
+    },
+    {
+        name: "TikTok",
+        icon: "fab fa-tiktok",
+        search: "@deividagamex",
+        color: "tiktok",
+        url: "https://www.tiktok.com/@deividagamex",
+        image: "https://res.cloudinary.com/sekai-jk/image/upload/v1737606441/Sekaijk/post/TwitchPerfil_otr0vf.jpg",
+    },
+    {
+        name: "GitHub",
+        icon: "fab fa-github",
+        search: "DeividAGameX",
+        color: "github",
+        url: "https://github.com/DeividAGameX",
+        image: "https://res.cloudinary.com/sekai-jk/image/upload/v1746845685/TwitchPerfil_manzwk.jpg",
+    },
+];
+---
+
+<section id="contacto" class="py-20 relative overflow-hidden">
+    <!-- Fondo minimalista -->
+    <div
+        class="absolute inset-0 z-0 bg-gradient-to-b from-neutral-900 to-neutral-950"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <h2
+            class="text-3xl md:text-4xl font-bold text-center mb-16 text-white title-underline"
+        >
+            Contacto
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="bg-neutral-950 p-8 rounded-lg relative overflow-hidden"
+                >
+                    <div class="relative overflow-hidden h-52 rounded-xl">
+                        <!-- Contenedor para las imágenes de perfil -->
+                        <div
+                            id="profile-images-container"
+                            class="absolute inset-0 z-0 opacity-100 transition-opacity duration-500"
+                        >
+                            <img
+                                src="/cv.jpg"
+                                alt="David"
+                                class="w-full h-full object-cover"
+                            />
+                            {
+                                socialLinks.map((link, index) => (
+                                    <img
+                                        id={`profile-image-${index}`}
+                                        src={link.image || "/placeholder.svg"}
+                                        alt={`${link.name} profile`}
+                                        class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+                                        data-index={index}
+                                        data-color={link.color}
+                                    />
+                                ))
+                            }
+                        </div>
+
+                        <!-- Overlay para mejorar la legibilidad del texto -->
+                        <div
+                            class="absolute inset-0 z-0 opacity-1 transition-opacity duration-500"
+                            id="profile-overlay"
+                        >
+                        </div>
+                    </div>
+
+                    <div class="relative pt-1">
+                        <h3
+                            class="text-2xl font-bold mb-6 text-primary font-anime"
+                        >
+                            ¡Hablemos!
+                        </h3>
+                        <p class="text-gray-400 mb-8">
+                            Estoy disponible para proyectos freelance,
+                            oportunidades laborales o simplemente para charlar
+                            sobre tecnología y desarrollo.
+                            <span
+                                id="buscarContainer"
+                                class="transition-opacity duration-500"
+                            >
+                                Por ello me puedes buscar en
+                                <span
+                                    id="buscar"
+                                    class="text-github"
+                                    data-color="text-github">GitHub</span
+                                > como <span
+                                    id="buscarUsuario"
+                                    data-color="text-github"
+                                    class="text-github">DeividAGameX</span
+                                >
+                            </span>
+                        </p>
+
+                        <div class="space-y-6 grid grid-cols-2">
+                            {
+                                socialLinks.map((link, index) => (
+                                    <a
+                                        href={link.url}
+                                        class="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        data-index={index}
+                                        data-color={link.color}
+                                        data-name={link.name}
+                                        data-search={link.search}
+                                    >
+                                        <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                            {/* <img
+                                                src={`/placeholder.svg?text=${link.icon}&height=20&width=20`}
+                                                alt={link.name}
+                                                class="w-5 h-5"
+                                            /> */}
+                                            <i class={link.icon} />
+                                        </div>
+                                        <span class="hover-underline">
+                                            {link.name}
+                                        </span>
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-950 p-8 rounded-lg">
+                    <form class="space-y-5">
+                        <div>
+                            <label
+                                for="name"
+                                class="block mb-2 font-medium text-gray-300"
+                                >Nombre</label
+                            >
+                            <input
+                                type="text"
+                                id="name"
+                                class="w-full px-4 py-2 rounded-md border border-neutral-700 bg-neutral-800 focus:outline-none focus:ring-1 focus:ring-primary text-white"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="email"
+                                class="block mb-2 font-medium text-gray-300"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                class="w-full px-4 py-2 rounded-md border border-neutral-700 bg-neutral-800 focus:outline-none focus:ring-1 focus:ring-primary text-white"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="message"
+                                class="block mb-2 font-medium text-gray-300"
+                                >Mensaje</label
+                            >
+                            <textarea
+                                id="message"
+                                rows="4"
+                                class="w-full px-4 py-2 rounded-md border border-neutral-700 bg-neutral-800 focus:outline-none focus:ring-1 focus:ring-primary text-white"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-anime w-full">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const socialLinks = document.querySelectorAll("[data-index]");
+            const profileImagesContainer = document.getElementById(
+                "profile-images-container"
+            );
+            const profileOverlay = document.getElementById("profile-overlay");
+            const profileImages = document.querySelectorAll(
+                '[id^="profile-image-"]'
+            );
+
+            const buscarContainer = document.getElementById("buscarContainer");
+            const buscar = document.getElementById("buscar");
+            const buscarUsuario = document.getElementById("buscarUsuario");
+
+            // Función para mostrar la imagen de perfil
+            function showProfileImage(
+                index: any,
+                color: any,
+                name: any,
+                search: any
+            ) {
+                // Ocultar todas las imágenes primero
+                profileImages.forEach((img) => {
+                    img.classList.remove("opacity-100");
+                    img.classList.add("opacity-0");
+                });
+
+                // Mostrar la imagen correspondiente
+                const targetImage = document.getElementById(
+                    `profile-image-${index}`
+                );
+                if (targetImage) {
+                    if (!buscar) {
+                        return;
+                    }
+                    if (!buscarUsuario) {
+                        return;
+                    }
+                    if (!profileOverlay) {
+                        return;
+                    }
+                    buscar.classList.remove(
+                        buscarUsuario.getAttribute("data-color") ?? ""
+                    );
+                    buscar.classList.add(`text-${color}`);
+                    buscar.innerText = name;
+
+                    buscarUsuario.classList.remove(
+                        buscarUsuario.getAttribute("data-color") ?? ""
+                    );
+                    buscarUsuario.classList.add(`text-${color}`);
+                    buscarUsuario.innerText = search;
+
+                    buscarUsuario.setAttribute("data-color", `text-${color}`);
+
+                    profileOverlay.classList.remove("opacity-0");
+                    profileOverlay.classList.add("opacity-80");
+
+                    targetImage.classList.remove("opacity-0");
+                    targetImage.classList.add("opacity-100");
+                }
+            }
+
+            // Función para ocultar todas las imágenes
+            function hideProfileImages() {
+                if (!profileImagesContainer) {
+                    return;
+                }
+                if (!profileOverlay) {
+                    return;
+                }
+                // profileImagesContainer.classList.remove("opacity-100");
+                // profileImagesContainer.classList.add("opacity-0");
+
+                profileOverlay.classList.remove("opacity-80");
+                profileOverlay.classList.add("opacity-0");
+
+                profileImages.forEach((img) => {
+                    img.classList.remove("opacity-100");
+                    img.classList.add("opacity-0");
+                });
+            }
+
+            // Agregar eventos de mouse
+            socialLinks.forEach((link) => {
+                link.addEventListener("mouseenter", () => {
+                    const index = link.getAttribute("data-index");
+                    const color = link.getAttribute("data-color");
+                    const name = link.getAttribute("data-name");
+                    const search = link.getAttribute("data-search");
+                    showProfileImage(index, color, name, search);
+                });
+
+                link.addEventListener("mouseleave", hideProfileImages);
+            });
+
+            // Para dispositivos táctiles
+            socialLinks.forEach((link) => {
+                link.addEventListener("touchstart", (e) => {
+                    e.preventDefault();
+                    const index = link.getAttribute("data-index");
+                    const color = link.getAttribute("data-color");
+                    const name = link.getAttribute("data-name");
+                    const search = link.getAttribute("data-search");
+                    showProfileImage(index, color, name, search);
+                });
+            });
+
+            // Ocultar imágenes cuando el mouse sale de la sección
+            const contactSection = document.querySelector(".subtle-bg");
+            if (contactSection) {
+                contactSection.addEventListener(
+                    "mouseleave",
+                    hideProfileImages
+                );
+            }
+        });
+    </script>
+</section>

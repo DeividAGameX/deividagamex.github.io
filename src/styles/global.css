@@ -1,0 +1,239 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap");
+
+@theme{
+    --color-primary: #6366f1; /* Color primario por defecto (indigo-500) */
+    --font-anime: "Outfit", sans-serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+:root {
+    --color-primary: #6366f1; /* Color primario por defecto (indigo-500) */
+    --font-anime: "Outfit", sans-serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    @apply text-neutral-800 dark:text-neutral-200;
+    background-color: #0f0f13;
+}
+
+/* Títulos con estilo anime */
+h1,
+h2,
+h3.anime-title {
+    font-family: var(--font-anime);
+    letter-spacing: 0.5px;
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+.hover\:bg-primary\/80:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 80%, transparent);
+}
+
+.hover\:bg-primary\/10:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.bg-primary\/20 {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.bg-primary\/10 {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.focus\:ring-primary:focus {
+    --tw-ring-color: var(--color-primary);
+}
+
+.hover\:text-primary:hover {
+    color: var(--color-primary);
+}
+
+/* Smooth transitions for color changes */
+*,
+*::before,
+*::after {
+    transition-property: color, background-color, border-color, transform,
+        opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* Animaciones para proyectos */
+#proyectos .grid > div {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#proyectos .grid > div.opacity-100 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Elementos minimalistas con toque anime */
+.anime-card {
+    @apply relative overflow-hidden rounded-lg;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones estilo anime minimalista */
+.btn-anime {
+    @apply relative overflow-hidden rounded-md px-6 py-3 font-medium text-white transition-all duration-300;
+    background: var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-anime:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-anime:active {
+    transform: translateY(1px);
+}
+
+.btn-anime::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.btn-anime:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Sección de habilidades con estilo anime minimalista */
+.skill-icon {
+    @apply relative overflow-hidden rounded-lg transition-all duration-300;
+}
+
+.skill-icon:hover {
+    transform: translateY(-5px);
+    z-index: 10;
+}
+
+.skill-icon::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.skill-icon:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Contenedores con fondo sutil */
+.subtle-bg {
+    @apply bg-neutral-900/50 backdrop-blur-sm;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Efecto de línea para títulos */
+.title-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.title-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-primary);
+}
+
+/* Efecto de hover para enlaces */
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Efecto de zoom para imágenes de perfil */
+#profile-images-container img {
+    transform: scale(1);
+    transition: transform 8s ease;
+}
+
+#profile-images-container img.opacity-100 {
+    transform: scale(1.1);
+}
+
+/* Estilos para categorías de habilidades */
+.skills-category {
+    @apply mb-12 last:mb-0;
+}
+
+.skills-category-title {
+    @apply text-xl font-bold mb-6 text-primary font-anime relative inline-block;
+}
+
+.skills-category-title::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    opacity: 0.5;
+}
