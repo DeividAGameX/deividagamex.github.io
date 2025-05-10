@@ -7,7 +7,6 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    output: "static",
     site: "https://deividagamex.github.io",
-    base: "",
+    base: "/",
 });
